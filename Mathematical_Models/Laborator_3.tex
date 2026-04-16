@@ -1,0 +1,238 @@
+%% Created by Maple 2024.2, Linux
+%% Source Worksheet: Laborator_3.mw
+%% Generated: Thu Apr 16 03:33:23 EEST 2026
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{maple}
+\usepackage[utf8]{inputenc}
+\usepackage[svgnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{textcomp}
+\begin{document}
+\lstset{basicstyle=\ttfamily,breaklines=true,columns=flexible}
+\pagestyle{empty}
+\DefineParaStyle{Maple Bullet Item}
+\DefineParaStyle{Maple Heading 1}
+\DefineParaStyle{Maple Warning}
+\DefineParaStyle{Maple Heading 4}
+\DefineParaStyle{Maple Heading 2}
+\DefineParaStyle{Maple Heading 3}
+\DefineParaStyle{Maple Dash Item}
+\DefineParaStyle{Maple Error}
+\DefineParaStyle{Maple Title}
+\DefineParaStyle{Maple Ordered List 1}
+\DefineParaStyle{Maple Text Output}
+\DefineParaStyle{Maple Ordered List 2}
+\DefineParaStyle{Maple Ordered List 3}
+\DefineParaStyle{Maple Normal}
+\DefineParaStyle{Maple Ordered List 4}
+\DefineParaStyle{Maple Ordered List 5}
+\DefineCharStyle{Maple 2D Output}
+\DefineCharStyle{Maple 2D Input}
+\DefineCharStyle{Maple Maple Input}
+\DefineCharStyle{Maple 2D Math}
+\DefineCharStyle{Maple Hyperlink}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (x (t),t)=-k \cdot x (t)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{cond\_in} \coloneqq x (0)=\,x_{0}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\{\mathit{ecdif} ,\,\textit{cond\_in} \},\,x (t)); $}
+
+% \mapleresult
+\begin{dmath}\label{(1)}
+\mathit{soll} \coloneqq x \! \left(t \right)=x_{0} {\mathrm e}^{-k t}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\mathit{rhs} (\mathit{soll}),\,x_{0},k ,t); $}
+
+% \mapleresult
+\begin{dmath}\label{(2)}
+\mathit{y1} \coloneqq \left(x_{0},k ,t \right)\hiderel{\mapsto }x_{0}\cdot {\mathrm e}^{-k \cdot t}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (2,4,t),\,\mathit{y1} (1,1,t),\,\mathit{y1} (0,1,t),\mathit{y1} (1,0,t)],\,t =-1..1,\,\mathit{color} =[\mathit{black} ,\,\mathit{red} ,\,\mathit{blue} ,\,\mathit{green}]); $}
+
+% \mapleresult
+\mapleplot{Laborator_3plot2d1.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{solve} (\frac{x_{0}}{2}=\mathit{y1} (x_{0},k ,t),t); $}
+
+% \mapleresult
+\begin{dmath}\label{(3)}
+\frac{\ln \! \left(2\right)}{k}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{evalf} (\mathit{solve} (\frac{x_{0}}{2}=\mathit{y1} (x_{0},k ,5730),k)); $}
+
+% \mapleresult
+\begin{dmath}\label{(4)}
+ 0.0001209680943
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{k1} \coloneqq \mathit{solve} ( 0.9=\,\mathit{y1} (3\,,k ,2),k); $}
+
+% \mapleresult
+\begin{dmath}\label{(5)}
+\mathit{k1} \coloneqq  0.6019864022
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} {T_{1}}_{2}\coloneqq \mathit{evalf} (\frac{\ln (2)}{\mathit{k1}}); $}
+
+% \mapleresult
+\begin{dmath}\label{(6)}
+{T_{1}}_{2}\coloneqq  1.151433285
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \, $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{restart} \colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdiff} \coloneqq \mathit{diff} (T (t),t)=-k \cdot (T (t)-T_{m})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{cond\_in} \coloneqq T (0)=T_{0}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\{\mathit{ecdiff} ,\,\textit{cond\_in} \},\,T (t)); $}
+
+% \mapleresult
+\begin{dmath}\label{(7)}
+\mathit{soll} \coloneqq T \! \left(t \right)=T_{m}+{\mathrm e}^{-k t} \left(T_{0}-T_{m}\right)
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\mathit{rhs} (\mathit{soll}),t ,k ,T_{0},T_{m})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (t ,2,1,3),\mathit{y1} (t ,3,2,2),\mathit{y1} (t ,5,1,1),\mathit{y1} (t ,2,0,1)],t =-2..2,\mathit{color} =[\mathit{black} ,\mathit{red} ,\mathit{blue} ,\mathit{green}]); $}
+
+% \mapleresult
+\mapleplot{Laborator_3plot2d2.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{solve} (\{\mathit{y1} (t ,k ,\,36,\,21)=\, 34.22,\,\mathit{y1} (t +1,k ,36,21)= 34.11\},\{t ,k \}); $}
+
+% \mapleresult
+\begin{dmath}\label{(8)}
+\left\{k  \hiderel{=}  0.008355536648,t  \hiderel{=}  15.11804352\right\}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{restart} \colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif1} \coloneqq \mathit{diff} (x (t),t)=\,r \cdot x (t)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{cond\_in} \coloneqq x (0)=\,x_{0}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif2} \coloneqq \mathit{diff} (x (t),t)=r_{0}\cdot x (t)\cdot (1-\frac{x (t)}{K})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll1} \coloneqq \mathit{dsolve} (\{\mathit{ecdif1} ,\,\textit{cond\_in} \},\,x (t)); $}
+
+% \mapleresult
+\begin{dmath}\label{(9)}
+\mathit{soll1} \coloneqq x \! \left(t \right)=x_{0} {\mathrm e}^{r t}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll2} \coloneqq \mathit{dsolve} (\{\mathit{ecdif2} ,\,\textit{cond\_in} \},\,x (t)); $}
+
+% \mapleresult
+\begin{dmath}\label{(10)}
+\mathit{soll2} \coloneqq x \! \left(t \right)=\frac{K x_{0}}{\left(K -x_{0}\right) {\mathrm e}^{-r_{0} t}+x_{0}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\mathit{rhs} (\mathit{soll1}),\,x_{0},r ,t); $}
+
+% \mapleresult
+\begin{dmath}\label{(11)}
+\mathit{y1} \coloneqq \left(x_{0},r ,t \right)\hiderel{\mapsto }x_{0}\cdot {\mathrm e}^{r \cdot t}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (10,-3,t),\,\mathit{y1} (10,3,t),\,\mathit{y1} (100,-5,t),\mathit{y1} (100,5,t)],\,t =-1..1,\,\mathit{color} =[\mathit{black} ,\,\mathit{red} ,\,\mathit{blue} ,\,\mathit{green}]); $}
+
+% \mapleresult
+\mapleplot{Laborator_3plot2d3.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y2} \coloneqq \mathit{unapply} (\mathit{rhs} (\mathit{soll2}),K ,\,x_{0},r_{0},t); $}
+
+% \mapleresult
+\begin{dmath}\label{(12)}
+\mathit{y2} \coloneqq \left(K ,x_{0},r_{0},t \right)\hiderel{\mapsto }\frac{K \cdot x_{0}}{\left(K -x_{0}\right)\cdot {\mathrm e}^{-r_{0}\cdot t}+x_{0}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y2} (1000,\,200,\,10,\,t),\,\mathit{y2} (1000,200,-10,t),\,\mathit{y2} (500,10,\,20\,,t),\,\mathit{y2} (500,10,-20,t)],\,t =-10..10,\,\mathit{color} =[\mathit{blue} ,\,\mathit{red} ,\,\mathit{green} ,\,\mathit{yellow}]); $}
+
+% \mapleresult
+\mapleplot{Laborator_3plot2d4.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{rt} \coloneqq \mathit{solve} (\{\mathit{y1} ( 9.6\cdot 10^{6},\,r ,t)= 9.6\cdot 10^{6},\,\mathit{y1} ( 9.6\cdot 10^{6},r ,t +10)=\, 12.9\cdot 10^{6}\,\},\{r ,t \}); $}
+
+% \mapleresult
+\begin{dmath}\label{(13)}
+\mathit{rt} \coloneqq \left\{r  \hiderel{=}  0.02954642129,t  \hiderel{=}  0.0\right\}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{r1} \coloneqq \mathit{rhs} (\mathit{rt} [1]); $}
+
+% \mapleresult
+\begin{dmath}\label{(14)}
+\mathit{r1} \coloneqq  0.02954642129
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{evalf} (\mathit{y1} ( 9.6\cdot 10^{6},\mathit{r1} ,110)) $}
+
+% \mapleresult
+\begin{dmath}\label{(15)}
+ 2.476135935\times 10^{8}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{rt1} \coloneqq \mathit{solve} (\{\mathit{y2} (K ,\, 9.6\cdot 10^{6},\,r_{0},t)= 9.6\cdot 10^{6},\,\mathit{y2} (K ,\, 9.6\cdot 10^{6},r_{0},t +10\,)=\, 12.9\cdot 10^{6},\,\mathit{y2} (K , 9.6\cdot 10^{6},\,r_{0},t +20)= 17.1\cdot 10^{6}\},\{K ,r_{0},t \}); $}
+
+% \mapleresult
+\begin{dmath}\label{(16)}
+\mathit{rt1} \coloneqq \left\{K  \hiderel{=}  9.2364000\times 10^{7},r_{0} \hiderel{=}  0.03361533082,t  \hiderel{=}  0.0\right\}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{K1} \coloneqq \mathit{rhs} (\mathit{rt1} [1]); $}
+
+% \mapleresult
+\begin{dmath}\label{(17)}
+\mathit{K1} \coloneqq  9.2364000\times 10^{7}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{r2} \coloneqq \mathit{rhs} (\mathit{rt1} [2]); $}
+
+% \mapleresult
+\begin{dmath}\label{(18)}
+\mathit{r2} \coloneqq  0.03361533082
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{evalf} (\mathit{y2} (\mathit{K1} ,\, 9.6\cdot 10^{6},\mathit{r2} ,110)) $}
+
+% \mapleresult
+\begin{dmath}\label{(19)}
+ 7.610485180\times 10^{7}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \, $}
+
+\end{document}
