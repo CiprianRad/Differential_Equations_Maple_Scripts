@@ -20,7 +20,7 @@ To run these scripts, you will need to have [Maplesoft Maple](https://www.maples
 ### Usage
 1. Clone the repository to your local machine:
    ```bash
-   git clone [https://github.com/CiprianRad/Differential_Equations_Maple_Scripts.git](https://github.com/CiprianRad/Differential_Equations_Maple_Scripts.git)
+   git clone https://github.com/CiprianRad/Differential_Equations_Maple_Scripts.git
 
 2. Navigate to the folder containing the topic you are interested in.
 
