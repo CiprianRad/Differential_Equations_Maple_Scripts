@@ -1,0 +1,579 @@
+%% Created by Maple 2024.2, Linux
+%% Source Worksheet: Laborator_2.mw
+%% Generated: Thu Apr 16 03:17:33 EEST 2026
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{maple}
+\usepackage[utf8]{inputenc}
+\usepackage[svgnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{textcomp}
+\begin{document}
+\lstset{basicstyle=\ttfamily,breaklines=true,columns=flexible}
+\pagestyle{empty}
+\DefineParaStyle{Maple Bullet Item}
+\DefineParaStyle{Maple Heading 1}
+\DefineParaStyle{Maple Warning}
+\DefineParaStyle{Maple Heading 4}
+\DefineParaStyle{Maple Heading 2}
+\DefineParaStyle{Maple Heading 3}
+\DefineParaStyle{Maple Dash Item}
+\DefineParaStyle{Maple Error}
+\DefineParaStyle{Maple Title}
+\DefineParaStyle{Maple Ordered List 1}
+\DefineParaStyle{Maple Text Output}
+\DefineParaStyle{Maple Ordered List 2}
+\DefineParaStyle{Maple Ordered List 3}
+\DefineParaStyle{Maple Normal}
+\DefineParaStyle{Maple Ordered List 4}
+\DefineParaStyle{Maple Ordered List 5}
+\DefineCharStyle{Maple 2D Output}
+\DefineCharStyle{Maple 2D Input}
+\DefineCharStyle{Maple Maple Input}
+\DefineCharStyle{Maple 2D Math}
+\DefineCharStyle{Maple Hyperlink}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)=\,2\,\cdot x \cdot (1+(y (x))^{2})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(1)}
+y \! \left(x \right)=\tan \! \left(x^{2}+2 c_{1}\right)
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\,\rightarrow \tan (x^{2}+2\cdot c)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y1} (x ,1),\,x =-\mathrm{infinity}..\mathrm{infinity}) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d1.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\,\rightarrow \tan (x^{2}+2\cdot c)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y1} (x ,\frac{314}{100}),\,x =-\mathrm{infinity}..\mathrm{infinity}) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d2.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq (x^{2}-1)\cdot \mathit{diff} (y (x),x)+2\,\cdot x \cdot (y (x))^{2}=0\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(2)}
+y \! \left(x \right)=\frac{1}{\ln \! \left(x -1\right)+\ln \! \left(x +1\right)+c_{1}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\,\rightarrow \,\frac{1}{\ln (x -1)+\ln (x +1)+c}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y1} (x ,1)\,,x =2..10) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d3.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y1} (x ,\,10),\,x =2..10) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d4.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq 2\,\cdot x^{2}\cdot \mathit{diff} (y (x),x)=\,x^{2}+(y (x))^{2}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} \,,\,y (x)) $}
+
+% \mapleresult
+\begin{dmath}\label{(3)}
+y \! \left(x \right)=\frac{x \left(\ln \! \left(x \right)+c_{1}-2\right)}{\ln \! \left(x \right)+c_{1}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\rightarrow \,\frac{(x \cdot (\ln (x)+c -2))}{\ln (x)+c}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y1} (x ,1),\,x =2..10) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d5.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)=-(\frac{x}{y (x)})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(4)}
+y \! \left(x \right) \hiderel{=} \sqrt{-x^{2}+c_{1}},y \! \left(x \right) \hiderel{=} -\sqrt{-x^{2}+c_{1}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\,\rightarrow \,\mathrm{sqrt}(-x^{2}+c)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y1} (x ,100),\,x =2..9) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d6.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \,\mathit{plot} (\mathit{y1} (x ,10),\,x =1..3) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d7.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \, $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y2} \coloneqq (x ,c)\,\rightarrow -\mathrm{sqrt}(-x^{2}+c)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y2} (x ,100),\,x =2..9) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d8.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \, $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y2} \coloneqq (x ,c)\,\rightarrow -\mathrm{sqrt}(-x^{2}+c)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y2} (x ,10),\,x =1..3) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d9.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \, $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)=-(\frac{x}{(y (x))^{3}})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(5)}
+y \! \left(x \right) \hiderel{=} \left(-2 x^{2}+c_{1}\right)^{\frac{1}{4}},y \! \left(x \right) \hiderel{=} -\left(-2 x^{2}+c_{1}\right)^{\frac{1}{4}},
+\\
+y \! \left(x \right)\hiderel{=}\mathrm{-I} \left(-2 x^{2}+c_{1}\right)^{\frac{1}{4}},y \! \left(x \right) \hiderel{=} \mathrm{I} \left(-2 x^{2}+c_{1}\right)^{\frac{1}{4}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\rightarrow \,(-2\cdot x^{2}+c)^{\frac{1}{4}}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (x ,20),\,\mathit{y1} (x ,10)],\,x =1..3\,); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d10.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)+y (x)\cdot \tan (x)=\frac{1}{\cos (x)}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(6)}
+y \! \left(x \right)=\left(\tan \! \left(x \right)+c_{1}\right) \cos \! \left(x \right)
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\rightarrow (\tan (x)+c)\cdot \cos (x)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (x ,10),\,\mathit{y1} (x ,5)],x =0..10) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d11.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)=-(\frac{(x +y (x))}{y (x)})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(7)}
+y \! \left(x \right)=\frac{\sqrt{3}\, x \tan \! \left(\mathit{RootOf} \! \left(\sqrt{3}\, \ln \! \left(\frac{3 x^{2}}{4}+\frac{3 x^{2} \tan \left(\textit{\_Z} \right)^{2}}{4}\right)+2 \sqrt{3}\, c_{1}-2 \textit{\_Z} \right)\right)}{2}-\frac{x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(8)}
+\mathit{soll} \coloneqq y \! \left(x \right)=\frac{\sqrt{3}\, x \tan \! \left(\mathit{RootOf} \! \left(\sqrt{3}\, \ln \! \left(\frac{3 x^{2}}{4}+\frac{3 x^{2} \tan \left(\textit{\_Z} \right)^{2}}{4}\right)+2 \sqrt{3}\, c_{1}-2 \textit{\_Z} \right)\right)}{2}-\frac{x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_expr} \coloneqq \mathit{rhs} (\mathit{soll}); $}
+
+% \mapleresult
+\begin{dmath}\label{(9)}
+\textit{right\_hand\_expr} \coloneqq \frac{\sqrt{3}\, x \tan \! \left(\mathit{RootOf} \! \left(\sqrt{3}\, \ln \! \left(\frac{3 x^{2}}{4}+\frac{3 x^{2} \tan \left(\textit{\_Z} \right)^{2}}{4}\right)+2 \sqrt{3}\, c_{1}-2 \textit{\_Z} \right)\right)}{2}-\frac{x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\textit{right\_hand\_expr} ,\,x \,,\textit{\_C1}); $}
+
+% \mapleresult
+\begin{dmath}\label{(10)}
+\mathit{y1} \coloneqq \left(x ,c_{1}\right)\hiderel{\mapsto }\frac{\sqrt{3}\cdot x \cdot \tan \! \left(\mathit{RootOf} \! \left(\sqrt{3}\cdot \ln \! \left(\frac{3\cdot x^{2}}{4}+\frac{3\cdot x^{2}\cdot \tan \left(\textit{\_Z} \right)^{2}}{4}\right)+2\cdot \sqrt{3}\cdot c_{1}-2\cdot \textit{\_Z} \right)\right)}{2}-\frac{x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (x ,10),\,\mathit{y1} (x ,3)],x =0..2); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d12.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DEtools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)+\frac{2}{x}\cdot y (x)=x^{3}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(11)}
+y \! \left(x \right)=\frac{\frac{x^{6}}{6}+c_{1}}{x^{2}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq (x ,c)\rightarrow \frac{(\frac{x^{6}}{6}+c)}{x^{2}}\colon  $}
+
+% \mapleresult
+\begin{dmath}\label{(12)}
+y \coloneqq \left(x ,c \right)\hiderel{\mapsto }\frac{\frac{x^{6}}{6}+c}{x^{2}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{plots})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (x ,10),\mathit{y1} (x ,2),x =1..3]); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d13.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)-\frac{1}{2}\cdot (y (x))=\cos (x)\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{DEplot} (\mathit{ecdif} ,\,y (x),\,x =-1..1,\,y =-1..3,\,\mathit{stepsize} = 0.1); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d14.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{DEplot} (\mathit{ecdif} ,\,y (x),\,x =-10..10,\,y =-100..100,\,\mathit{stepsize} = 0.1) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d15.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(13)}
+\mathit{soll} \coloneqq y \! \left(x \right)=-\frac{2 \cos \! \left(x \right)}{5}+\frac{4 \sin \! \left(x \right)}{5}+{\mathrm e}^{\frac{x}{2}} c_{1}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side} \coloneqq \mathit{rhs} (\mathit{soll}); $}
+
+% \mapleresult
+\begin{dmath}\label{(14)}
+\textit{right\_hand\_side} \coloneqq -\frac{2 \cos \! \left(x \right)}{5}+\frac{4 \sin \! \left(x \right)}{5}+{\mathrm e}^{\frac{x}{2}} c_{1}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\textit{right\_hand\_side} ,\,x ,c) $}
+
+% \mapleresult
+\begin{dmath}\label{(15)}
+\mathit{y1} \coloneqq \left(x ,c \right)\hiderel{\mapsto }-\frac{2\cdot \cos \! \left(x \right)}{5}+\frac{4\cdot \sin \! \left(x \right)}{5}+{\mathrm e}^{\frac{x}{2}}\cdot c_{1}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{DEplot} (\mathit{ecdif} ,\,y (x),\,x =-5..5,\,y =-10..10,\,[[y (0)=-2],[y (0)=2],[y (0)=-\frac{2}{5}]],\,\mathit{stepsize} = 0.1,\,\mathit{linecolor} =[\mathit{black} ,\,\mathit{red} ,\,\mathit{blue}]); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d16.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x ,x)+y (x)=\,\sin (x)+\cos (x); $}
+
+% \mapleresult
+\begin{dmath}\label{(16)}
+\mathit{ecdif} \coloneqq \frac{d^{2}}{d x^{2}}y \! \left(x \right)+y \! \left(x \right)=\sin \! \left(x \right)+\cos \! \left(x \right)
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(17)}
+\mathit{soll} \coloneqq y \! \left(x \right)=\sin \! \left(x \right) c_{2}+\cos \! \left(x \right) c_{1}+\frac{\left(1-x \right) \cos \! \left(x \right)}{2}+\frac{\sin \! \left(x \right) x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side} \coloneqq \mathit{rhs} (\mathit{soll}) $}
+
+% \mapleresult
+\begin{dmath}\label{(18)}
+\textit{right\_hand\_side} \coloneqq \sin \! \left(x \right) c_{2}+\cos \! \left(x \right) c_{1}+\frac{\left(1-x \right) \cos \! \left(x \right)}{2}+\frac{\sin \! \left(x \right) x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\textit{right\_hand\_side} ,\,x ,\,c_{1},c_{2}); $}
+
+% \mapleresult
+\begin{dmath}\label{(19)}
+\mathit{y1} \coloneqq \left(x ,c_{1},c_{2}\right)\hiderel{\mapsto }\sin \! \left(x \right)\cdot c_{2}+\cos \! \left(x \right)\cdot c_{1}+\frac{\left(1-x \right)\cdot \cos \! \left(x \right)}{2}+\frac{\sin \! \left(x \right)\cdot x}{2}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\mathit{y1} (x ,0,0),\,\mathit{y1} (x ,0,1),\mathit{y1} (x ,1,0),\mathit{y1} (x ,1,1)],\,x =-10..10,\,y =-10..10); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d17.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x ,x)-5\cdot \mathit{diff} (y (x),x)+4\cdot y (x)=0; $}
+
+% \mapleresult
+\begin{dmath}\label{(20)}
+\mathit{ecdif} \coloneqq \frac{d^{2}}{d x^{2}}y \! \left(x \right)-5 \frac{d}{d x}y \! \left(x \right)+4 y \! \left(x \right)=0
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(21)}
+\mathit{soll} \coloneqq y \! \left(x \right)=c_{1} {\mathrm e}^{x}+c_{2} {\mathrm e}^{4 x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side} \coloneqq \mathit{rhs} (\mathit{soll}) $}
+
+% \mapleresult
+\begin{dmath}\label{(22)}
+\textit{right\_hand\_side} \coloneqq c_{1} {\mathrm e}^{x}+c_{2} {\mathrm e}^{4 x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\textit{right\_hand\_side} ,\,x \,,c_{1},c_{2}\,); $}
+
+% \mapleresult
+\begin{dmath}\label{(23)}
+\mathit{y1} \coloneqq \left(x ,c_{1},c_{2}\right)\hiderel{\mapsto }c_{1}\cdot {\mathrm e}^{x}+c_{2}\cdot {\mathrm e}^{4\cdot x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,}  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{cond\_in} \coloneqq y (0)=5,\,\mathrm{D}(y)(0)=8; $}
+
+% \mapleresult
+\begin{dmath}\label{(24)}
+\textit{cond\_in} \coloneqq y \! \left(0\right) \hiderel{=} 5,\mathrm{D}\! \left(y \right)\! \left(0\right) \hiderel{=} 8
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{soll\_1} \coloneqq \mathit{dsolve} (\{\mathit{ecdif} ,\,\textit{cond\_in} \},\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(25)}
+\textit{soll\_1} \coloneqq y \! \left(x \right)=4 {\mathrm e}^{x}+{\mathrm e}^{4 x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side}_{1}\coloneqq \mathit{rhs} (\textit{soll\_1})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y2} \coloneqq \mathit{unapply} (\textit{right\_hand\_side}_{1},x); $}
+
+% \mapleresult
+\begin{dmath}\label{(26)}
+\mathit{y2} \coloneqq x \hiderel{\mapsto }4\cdot {\mathrm e}^{x}+{\mathrm e}^{4\cdot x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\mathit{y2} (x),\,x =10..-10,\,y =-10..10); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d18.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{restart} \colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x ,x)-\mathit{diff} (y (x),x)-2\,\cdot y (x)=0\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{cond\_in} \coloneqq y (0)=a ,\mathrm{D}(y)(0)=2\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\{\mathit{ecdif} ,\,\textit{cond\_in} \},y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(27)}
+\mathit{soll} \coloneqq y \! \left(x \right)=\frac{\left(-2+2 a \right) {\mathrm e}^{-x}}{3}+\frac{{\mathrm e}^{2 x} \left(a +2\right)}{3}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{limit} (\mathit{soll} ,\,x =\mathrm{infinity}) $}
+
+% \mapleresult
+\begin{dmath}\label{(28)}
+\munderset{x \rightarrow \infty}{\mathrm{lim}}\! y \! \left(x \right)=\mathrm{signum}\! \left(a +2\right) \infty 
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{restart} \colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{with} (\mathit{DETools})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif} \coloneqq \mathit{diff} (y (x),x)+\frac{k}{x}\cdot y (x)=x^{3}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{soll} \coloneqq \mathit{dsolve} (\mathit{ecdif} ,\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(29)}
+\mathit{soll} \coloneqq y \! \left(x \right)=\frac{x^{4}}{4+k}+x^{-k} c_{1}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side} \coloneqq \mathit{rhs} (\mathit{soll})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{y1} \coloneqq \mathit{unapply} (\textit{right\_hand\_side} ,x ,k ,c_{1}); $}
+
+% \mapleresult
+\begin{dmath}\label{(30)}
+\mathit{y1} \coloneqq \left(x ,k ,c_{1}\right)\hiderel{\mapsto }\frac{x^{4}}{4+k}+x^{-k}\cdot c_{1}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{list\_f} \coloneqq \mathit{y1} (x ,1,i)\$ i =1..10; $}
+
+% \mapleresult
+\begin{dmath}\label{(31)}
+\textit{list\_f} \coloneqq \frac{x^{4}}{5}+\frac{1}{x},\frac{x^{4}}{5}+\frac{2}{x},\frac{x^{4}}{5}+\frac{3}{x},\frac{x^{4}}{5}+\frac{4}{x},\frac{x^{4}}{5}+\frac{5}{x},\frac{x^{4}}{5}+\frac{6}{x},\frac{x^{4}}{5}+\frac{7}{x},\frac{x^{4}}{5}+\frac{8}{x},\frac{x^{4}}{5}+\frac{9}{x},\frac{x^{4}}{5}+\frac{10}{x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} ([\textit{list\_f}],x =-1..1); $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d19.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{ecdif2} \coloneqq \mathit{diff} (y (x),x)+\frac{1}{x}\cdot y (x)=x^{3}\colon  $}
+
+% \mapleresult
+\href{http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20(in%20DEtools%2FDEplot)%20system%20must%20have%20same%20number%20of%20dependent%20variables%20as%20DE's.}{Error, (in DEtools/DEplot) system must have same number of dependent variables as DE's.}\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{soll\_2} \coloneqq \mathit{dsolve} (\mathit{ecdif2}) $}
+
+% \mapleresult
+\begin{dmath}\label{(32)}
+\textit{soll\_2} \coloneqq y \! \left(x \right)=\frac{\frac{x^{5}}{5}+c_{1}}{x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{DEplot} (\mathit{ecdif2} ,\,y (x),\,x =-10..10,\,y =-10..10) $}
+
+% \mapleresult
+\begin{dmath}\label{(33)}
+\mathit{DEplot} \! \left(\frac{d}{d x}y \! \left(x \right)+\frac{y \! \left(x \right)}{x} \hiderel{=} x^{3},y \! \left(x \right),x  \hiderel{=} -10..10,y  \hiderel{=} -10..10\right)
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{cond\_in} \coloneqq y (1)=0\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{soll\_c} \coloneqq \mathit{dsolve} (\{\mathit{ecdif2} ,\,\textit{cond\_in} \},\,y (x))\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side\_c} \coloneqq \mathit{rhs} (\textit{soll\_c})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{y\_c} \coloneqq \mathit{unapply} (\textit{right\_hand\_side\_c} ,\,x) $}
+
+% \mapleresult
+\begin{dmath}\label{(34)}
+\textit{y\_c} \coloneqq x \hiderel{\mapsto }\frac{x^{5}-1}{5\cdot x}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \mathit{plot} (\textit{y\_c} (x),x =-10..10\,) $}
+
+% \mapleresult
+\mapleplot{Laborator_2plot2d20.png}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \,\mathit{ecdif2} \coloneqq \mathit{diff} (y (x),x)+\frac{k}{x}\cdot y (x)=x^{3}\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{soll\_d} \coloneqq \mathit{dsolve} (\{\mathit{ecdif2} ,\,\textit{cond\_in} \},\,y (x)); $}
+
+% \mapleresult
+\begin{dmath}\label{(35)}
+\textit{soll\_d} \coloneqq y \! \left(x \right)=\frac{x^{4}-x^{-k}}{4+k}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{right\_hand\_side\_d} \coloneqq \mathit{rhs} (\textit{soll\_d})\colon  $}
+
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{y\_d} \coloneqq \mathit{unapply} (\textit{right\_hand\_side\_d} ,\,x ,\,k); $}
+
+% \mapleresult
+\begin{dmath}\label{(36)}
+\textit{y\_d} \coloneqq \left(x ,k \right)\hiderel{\mapsto }\frac{x^{4}-x^{-k}}{4+k}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \textit{list\_d} \coloneqq \textit{y\_d} (x ,i)\$ i =1..10; $}
+
+% \mapleresult
+\begin{dmath}\label{(37)}
+\textit{list\_d} \coloneqq \frac{x^{4}}{5}-\frac{1}{5 x},\frac{x^{4}}{6}-\frac{1}{6 x^{2}},\frac{x^{4}}{7}-\frac{1}{7 x^{3}},\frac{x^{4}}{8}-\frac{1}{8 x^{4}},\frac{x^{4}}{9}-\frac{1}{9 x^{5}},\frac{x^{4}}{10}-\frac{1}{10 x^{6}},\frac{x^{4}}{11}-\frac{1}{11 x^{7}},\frac{x^{4}}{12}-\frac{1}{12 x^{8}},\frac{x^{4}}{13}-\frac{1}{13 x^{9}},\frac{x^{4}}{14}-\frac{1}{14 x^{10}}
+\end{dmath}
+\mapleinput
+{$ \displaystyle \texttt{>\,} \, $}
+
+\end{document}
